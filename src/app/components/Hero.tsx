@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import profileImage from '../../imports/img1.jpg';
 
 export function Hero() {
   return (
@@ -41,7 +42,7 @@ export function Hero() {
           className="relative w-full aspect-[3/4] rounded-t-full border-4 border-black overflow-hidden shadow-[16px_16px_0px_0px_rgba(255,17,0,1)] bg-gray-300"
         >
           <ImageWithFallback 
-            src="src/imports/img1.jpg" 
+            src={profileImage} 
             alt="Portrait de profil"
             className="w-full h-full object-cover"
           />

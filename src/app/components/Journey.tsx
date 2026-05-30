@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import journeyImage from '../../imports/img2.jpg';
 
 const education = [
   { year: "2022 - 2026", title: "Diplôme d'Ingénieur", school: "ESAIP, Angers, France", color: "bg-blue-600" },
@@ -22,7 +23,7 @@ export function Journey() {
             className="w-full aspect-[4/5] border-4 border-black bg-white shadow-[-16px_16px_0px_0px_rgba(0,85,255,1)] relative z-10"
           >
              <ImageWithFallback 
-                src="src/imports/img2.jpg" 
+                src={journeyImage} 
                 alt="En marche vers l'avenir"
                 className="w-full h-full object-cover"
               />

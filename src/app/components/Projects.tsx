@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import projectImage from '../../imports/img3.png';
 
 const projects = [
   {
@@ -57,7 +58,7 @@ export function Projects() {
                className="w-full h-full border-4 border-black bg-white overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
              >
                <ImageWithFallback 
-                 src="src/imports/img3.png"
+                 src={projectImage}
                  alt="Regarde ce projet"
                  className="w-full h-full object-cover grayscale"
                />
