@@ -20,7 +20,7 @@ export function Navbar() {
           animate={{ y: 0, opacity: 1 }}
           className="text-2xl font-black font-['Syne'] uppercase tracking-tighter bg-blue-600 text-white px-4 py-2 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
         >
-          Moi.
+          DABIRE Mounir.
         </motion.div>
         
         <motion.ul 
