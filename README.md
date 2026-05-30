@@ -1,11 +1,18 @@
+# Portfolio - Mounir DABIRE
 
-  # Créer un portfolio créatif
+Ce dépôt contient mon portfolio personnel, développé avec React, Vite et Tailwind CSS.
 
-  This is a code bundle for Créer un portfolio créatif. 
+Le site présente mon profil, mon parcours, mes expériences, mes projets, mes compétences et mes centres d'intérêt à travers une interface visuelle au style brutaliste.
 
-  ## Running the code
+## Aperçu
 
-  Run `npm install` to install the dependencies.
+- Profil et présentation personnelle
+- Parcours académique
+- Expériences professionnelles
+- Projets académiques et personnels
+- Compétences techniques
+- Contact
 
-  Run `npm run dev` to start the development server.
-  
+## Lien
+
+[Voir le portfolio en ligne](https://mounir1200.github.io/Portofolio/)

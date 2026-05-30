@@ -41,18 +41,17 @@ export function Projects() {
   };
 
   return (
-    <section id="projets" className="py-20">
+    <section id="projets" className="py-16 md:py-20">
       <div className="flex flex-col gap-12">
-        <div className="flex justify-between items-end border-b-8 border-black pb-4">
-          <h2 className="text-4xl md:text-6xl font-black font-['Syne'] uppercase">
+        <div className="flex min-w-0 items-end justify-between border-b-8 border-black pb-4">
+          <h2 className="break-words font-['Syne'] text-4xl font-black uppercase md:text-6xl">
             Mes Projets
           </h2>
-          <span className="text-xl font-bold uppercase hidden md:block">* Explorations</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           
-          <div className="md:col-span-2 xl:col-span-1 relative h-[340px] md:h-[360px]">
+          <div className="relative h-[340px] md:col-span-2 md:h-[360px] xl:col-span-1">
              <motion.div 
                whileHover={{ scale: 1.02 }}
                className="w-full h-full border-4 border-black bg-white overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
@@ -63,7 +62,7 @@ export function Projects() {
                  className="w-full h-full object-cover grayscale"
                />
                <div className="absolute inset-0 flex items-center justify-center p-6 bg-red-600/20">
-                 <div className="bg-white px-6 py-4 border-4 border-black transform -rotate-3 font-black uppercase text-xl text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                 <div className="max-w-full break-words bg-white px-4 py-3 text-center text-base font-black uppercase border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transform -rotate-3 sm:px-6 sm:py-4 sm:text-xl">
                    "C'est ici que la magie opère."
                  </div>
                </div>
@@ -74,7 +73,7 @@ export function Projects() {
             const isDark = proj.color === 'bg-black';
             const isFlipped = Boolean(flippedProjects[idx]);
             const shadowColor = isDark ? '#0055FF' : proj.color === 'bg-blue-600' ? '#FF1100' : '#000000';
-            const faceClasses = `absolute inset-0 min-w-0 overflow-hidden p-6 border-4 border-black flex flex-col justify-between [backface-visibility:hidden] ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`;
+            const faceClasses = `absolute inset-0 min-w-0 overflow-hidden p-5 border-4 border-black flex flex-col justify-between [backface-visibility:hidden] sm:p-6 ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`;
 
             return (
               <motion.div
@@ -83,7 +82,7 @@ export function Projects() {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="h-[340px] md:h-[360px] [perspective:1200px]"
+                className="h-[410px] sm:h-[380px] lg:h-[360px] [perspective:1200px]"
               >
                 <motion.button
                   type="button"
@@ -104,7 +103,7 @@ export function Projects() {
                       <span className={`inline-block px-3 py-1 font-bold text-xs border-2 mb-6 uppercase ${isDark ? 'border-white' : 'border-black'}`}>
                         {proj.type}
                       </span>
-                      <h3 className="max-w-full text-[clamp(1.15rem,1.35vw,1.5rem)] font-black font-['Syne'] uppercase leading-[1.05] break-words hyphens-auto [text-wrap:balance]">
+                      <h3 className="max-w-full break-words font-['Syne'] text-lg font-black uppercase leading-[1.05] hyphens-auto [text-wrap:balance] sm:text-xl lg:text-2xl">
                         {proj.title}
                       </h3>
                     </div>
@@ -119,7 +118,7 @@ export function Projects() {
                     style={{ boxShadow: `8px 8px 0px 0px ${shadowColor}` }}
                   >
                     <div className="min-w-0">
-                      <h3 className="mb-5 max-w-full text-[clamp(1rem,1.1vw,1.25rem)] font-black font-['Syne'] uppercase leading-[1.05] break-words hyphens-auto">
+                      <h3 className="mb-5 max-w-full break-words font-['Syne'] text-base font-black uppercase leading-[1.05] hyphens-auto sm:text-lg lg:text-xl">
                         {proj.title}
                       </h3>
                       <p className={`text-sm md:text-base font-bold leading-relaxed break-words ${isDark ? 'text-white/85' : 'text-black/75'}`}>

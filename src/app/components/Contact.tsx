@@ -38,31 +38,31 @@ export function Contact() {
   };
 
   return (
-    <footer id="contact" className="bg-blue-600 border-t-8 border-black pt-20 pb-10 px-6 md:px-12 relative overflow-hidden">
+    <footer id="contact" className="relative overflow-hidden bg-blue-600 px-4 pb-10 pt-16 border-t-8 border-black sm:px-6 md:px-12 md:pt-20">
       <div className="max-w-7xl mx-auto relative z-10 flex flex-col items-center text-center">
         
-        <h2 className="text-5xl md:text-7xl font-black font-['Syne'] uppercase text-white drop-shadow-[6px_6px_0px_rgba(0,0,0,1)] mb-12">
+        <h2 className="mb-12 break-words font-['Syne'] text-4xl font-black uppercase text-white drop-shadow-[4px_4px_0px_rgba(0,0,0,1)] sm:text-5xl md:text-7xl md:drop-shadow-[6px_6px_0px_rgba(0,0,0,1)]">
           Parlons-en.
         </h2>
         
-        <div className="flex flex-col md:flex-row gap-8 mb-20">
-          <a href={`mailto:${email}`} onClick={handleEmailClick} className="flex items-center gap-4 bg-white border-4 border-black px-8 py-4 text-xl font-bold uppercase hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(255,17,0,1)] transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group">
+        <div className="mb-16 flex w-full flex-col items-center gap-6 md:mb-20 md:flex-row md:justify-center md:gap-8">
+          <a href={`mailto:${email}`} onClick={handleEmailClick} className="group flex w-full max-w-xs items-center justify-center gap-4 bg-white px-6 py-4 text-lg font-bold uppercase border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(255,17,0,1)] sm:text-xl md:w-auto md:px-8">
             <Mail className="w-8 h-8 group-hover:text-red-600" />
             <span>{emailCopied ? 'Email copié' : 'Email'}</span>
           </a>
           
-          <a href="https://www.linkedin.com/in/mounir-dabire" className="flex items-center gap-4 bg-white border-4 border-black px-8 py-4 text-xl font-bold uppercase hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(255,17,0,1)] transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group">
+          <a href="https://www.linkedin.com/in/mounir-dabire" className="group flex w-full max-w-xs items-center justify-center gap-4 bg-white px-6 py-4 text-lg font-bold uppercase border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(255,17,0,1)] sm:text-xl md:w-auto md:px-8">
             <Linkedin className="w-8 h-8 group-hover:text-blue-600" />
             <span>LinkedIn</span>
           </a>
           
-          <a href="https://github.com/Mounir1200" className="flex items-center gap-4 bg-white border-4 border-black px-8 py-4 text-xl font-bold uppercase hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(255,17,0,1)] transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group">
+          <a href="https://github.com/Mounir1200" className="group flex w-full max-w-xs items-center justify-center gap-4 bg-white px-6 py-4 text-lg font-bold uppercase border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(255,17,0,1)] sm:text-xl md:w-auto md:px-8">
             <Github className="w-8 h-8 group-hover:text-black" />
             <span>GitHub</span>
           </a>
         </div>
         
-        <p className="text-white font-bold text-lg border-t-4 border-black pt-8 w-full">
+        <p className="w-full break-words border-t-4 border-black pt-8 text-base font-bold text-white sm:text-lg">
           © {new Date().getFullYear()} — Portofolio de Mounir DABIRE.
         </p>
       </div>

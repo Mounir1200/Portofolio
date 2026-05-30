@@ -13,12 +13,12 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 p-4 pointer-events-none">
-      <div className="max-w-7xl mx-auto flex justify-between items-center pointer-events-auto">
+    <nav className="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 pointer-events-none">
+      <div className="max-w-7xl mx-auto flex min-w-0 justify-between items-center gap-3 pointer-events-auto">
         <motion.div 
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="text-2xl font-black font-['Syne'] uppercase tracking-tighter bg-blue-600 text-white px-4 py-2 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+          className="max-w-[calc(100vw-2rem)] truncate bg-blue-600 px-3 py-2 font-['Syne'] text-base font-black uppercase text-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:px-4 sm:text-xl md:text-2xl"
         >
           DABIRE Mounir.
         </motion.div>
@@ -27,7 +27,7 @@ export function Navbar() {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="hidden md:flex gap-4 bg-white px-6 py-3 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-full"
+          className="hidden lg:flex gap-4 whitespace-nowrap bg-white px-6 py-3 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-full"
         >
           {links.map((link) => (
             <li key={link.name}>

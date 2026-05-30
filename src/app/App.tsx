@@ -10,9 +10,9 @@ import { Navbar } from './components/Navbar';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#ebebeb] font-['Inter',sans-serif] text-black selection:bg-red-600 selection:text-white">
+    <div className="min-h-screen w-full overflow-x-hidden bg-[#ebebeb] font-['Inter',sans-serif] text-black selection:bg-red-600 selection:text-white">
       <Navbar />
-      <main className="flex flex-col gap-32 pb-32 pt-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+      <main className="mx-auto flex w-full max-w-7xl min-w-0 flex-col gap-20 overflow-x-hidden px-4 pb-24 pt-24 sm:gap-24 sm:px-6 md:gap-32 md:px-12 md:pb-32">
         <Hero />
         <Journey />
         <Projects />

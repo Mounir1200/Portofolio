@@ -11,16 +11,16 @@ const experiences = [
 
 export function Experience() {
   return (
-    <section id="experiences" className="py-20">
-      <div className="bg-black text-white p-8 md:p-16 border-4 border-black shadow-[16px_16px_0px_0px_rgba(204,204,204,1)] relative">
-        <h2 className="text-4xl md:text-6xl font-black font-['Syne'] uppercase mb-12">
+    <section id="experiences" className="py-16 md:py-20">
+      <div className="relative min-w-0 bg-black p-5 text-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(204,204,204,1)] sm:p-8 md:p-16 md:shadow-[16px_16px_0px_0px_rgba(204,204,204,1)]">
+        <h2 className="mb-10 break-words font-['Syne'] text-4xl font-black uppercase md:mb-12 md:text-6xl">
           Expériences
         </h2>
         
         <div className="absolute top-10 right-10 w-24 h-24 bg-blue-600 rounded-full border-4 border-white hidden md:block" />
         <div className="absolute top-20 right-24 w-12 h-12 bg-red-600 border-4 border-white hidden md:block transform rotate-45" />
 
-        <div className="flex flex-col gap-0 border-t-4 border-white">
+        <div className="flex min-w-0 flex-col gap-0 border-t-4 border-white">
           {experiences.map((exp, idx) => (
             <motion.div 
               key={idx}
@@ -28,15 +28,15 @@ export function Experience() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.2 }}
-              className="flex flex-col md:flex-row border-b-4 border-white py-8 gap-4 hover:bg-white hover:text-black transition-colors group px-4 -mx-4"
+              className="group flex min-w-0 flex-col gap-4 border-b-4 border-white px-0 py-6 transition-colors hover:bg-white hover:text-black sm:px-4 sm:-mx-4 md:flex-row md:py-8"
             >
-              <div className="w-full md:w-1/4 font-bold text-lg pt-1 group-hover:text-blue-600">
+              <div className="w-full break-words pt-1 text-base font-bold group-hover:text-blue-600 sm:text-lg md:w-1/4">
                 {exp.duration}
               </div>
-              <div className="w-full md:w-3/4">
-                <h3 className="text-2xl font-black font-['Syne'] uppercase">{exp.role}</h3>
+              <div className="w-full min-w-0 md:w-3/4">
+                <h3 className="break-words font-['Syne'] text-xl font-black uppercase sm:text-2xl">{exp.role}</h3>
                 <h4 className="text-lg font-bold text-gray-400 group-hover:text-red-600 mb-4">{exp.company}</h4>
-                <p className="font-medium max-w-2xl whitespace-pre-line">{exp.desc}</p>
+                <p className="max-w-2xl whitespace-pre-line break-words font-medium">{exp.desc}</p>
               </div>
             </motion.div>
           ))}
