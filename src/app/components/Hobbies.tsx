@@ -25,7 +25,7 @@ export function Hobbies() {
             <li className="border-l-4 border-white pl-4 hover:pl-6 transition-all cursor-default">Actualités Tech & IA</li>
             <li className="border-l-4 border-white pl-4 hover:pl-6 transition-all cursor-default">Actualités Gaming</li>
             <li className="border-l-4 border-white pl-4 hover:pl-6 transition-all cursor-default">Actualités Sports</li>
-            <li className="border-l-4 border-white pl-4 hover:pl-6 transition-all cursor-default">Typographie Expérimentale</li>
+            <li className="border-l-4 border-white pl-4 hover:pl-6 transition-all cursor-default">Cuisine</li>
           </ul>
         </motion.div>
 

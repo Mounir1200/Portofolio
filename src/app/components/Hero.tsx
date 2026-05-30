@@ -41,7 +41,7 @@ export function Hero() {
           className="relative w-full aspect-[3/4] rounded-t-full border-4 border-black overflow-hidden shadow-[16px_16px_0px_0px_rgba(255,17,0,1)] bg-gray-300"
         >
           <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMHBlcnNvbiUyMHNvbGlkJTIwYmFja2dyb3VuZCUyMGNyZWF0aXZlfGVufDF8fHx8MTc4MDEzODQwNXww&ixlib=rb-4.1.0&q=80&w=1080" 
+            src="src/imports/img1.jpg" 
             alt="Portrait de profil"
             className="w-full h-full object-cover"
           />

@@ -22,9 +22,9 @@ export function Journey() {
             className="w-full aspect-[4/5] border-4 border-black bg-white shadow-[-16px_16px_0px_0px_rgba(0,85,255,1)] relative z-10"
           >
              <ImageWithFallback 
-                src="https://images.unsplash.com/photo-1769839054972-99dbbb08c241?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjB3YWxraW5nJTIwc2lkZSUyMHZpZXclMjBtaW5pbWFsaXN0fGVufDF8fHx8MTc4MDEzODQwNXww&ixlib=rb-4.1.0&q=80&w=1080" 
+                src="src/imports/img2.jpg" 
                 alt="En marche vers l'avenir"
-                className="w-full h-full object-cover grayscale contrast-125"
+                className="w-full h-full object-cover"
               />
           </motion.div>
           <div className="absolute -z-0 top-1/2 -right-20 w-40 h-40 bg-gray-300 rounded-full border-4 border-black" />

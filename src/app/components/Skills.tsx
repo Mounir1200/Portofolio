@@ -81,7 +81,7 @@ export function Skills() {
           transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
           className="flex whitespace-nowrap gap-8 text-2xl md:text-3xl font-black font-['Syne'] text-white uppercase"
         >
-          {Array(10).fill("VIF - BRUT - RÊVEUR - ").map((t, i) => <span key={i}>{t}</span>)}
+          {Array(10).fill("SIMPLE - CURIEUX - ATTENTIF - ").map((t, i) => <span key={i}>{t}</span>)}
         </motion.div>
       </div>
     </section>

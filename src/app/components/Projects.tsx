@@ -28,7 +28,7 @@ export function Projects() {
                className="w-full h-full border-4 border-black bg-white overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
              >
                <ImageWithFallback 
-                 src="https://images.unsplash.com/photo-1689143947647-062e1a24bf2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBwb2ludGluZyUyMG9yJTIwaG9sZGluZyUyMHNvbWV0aGluZyUyMHNvbGlkJTIwYmFja2dyb3VuZHxlbnwxfHx8fDE3ODAxMzg0MDV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                 src="src/imports/img3.png"
                  alt="Regarde ce projet"
                  className="w-full h-full object-cover grayscale"
                />
