@@ -63,7 +63,7 @@ export function Contact() {
         </div>
         
         <p className="w-full break-words border-t-4 border-black pt-8 text-base font-bold text-white sm:text-lg">
-          © {new Date().getFullYear()} — Portofolio de Mounir DABIRE.
+          © {new Date().getFullYear()} — Portfolio de Mounir DABIRE.
         </p>
       </div>
       

@@ -15,4 +15,4 @@ Le site présente mon profil, mon parcours, mes expériences, mes projets, mes c
 
 ## Lien
 
-[Voir le portfolio en ligne](https://mounir1200.github.io/Portofolio/)
+[Voir le portfolio en ligne](https://mounir1200.github.io/Portfolio/)
