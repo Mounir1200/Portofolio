@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { SectionHeading } from './SectionHeading';
+import { fadeUp, revealOnce, staggerContainer } from '../lib/animations';
 
 const experiences = [
   { role: "Développeur AI", company: "ESSCA Angers", duration: "Avril 2026 - Présent", desc: "Miantenance et développement d'applications internes" },
@@ -13,21 +15,22 @@ export function Experience() {
   return (
     <section id="experiences" className="py-16 md:py-20">
       <div className="relative min-w-0 bg-black p-5 text-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(204,204,204,1)] sm:p-8 md:p-16 md:shadow-[16px_16px_0px_0px_rgba(204,204,204,1)]">
-        <h2 className="mb-10 break-words font-['Syne'] text-4xl font-black uppercase md:mb-12 md:text-6xl">
+        <SectionHeading withUnderline={false} className="mb-10 md:mb-12">
           Expériences
-        </h2>
-        
+        </SectionHeading>
+
         <div className="absolute top-10 right-10 w-24 h-24 bg-blue-600 rounded-full border-4 border-white hidden md:block" />
         <div className="absolute top-20 right-24 w-12 h-12 bg-red-600 border-4 border-white hidden md:block transform rotate-45" />
 
-        <div className="flex min-w-0 flex-col gap-0 border-t-4 border-white">
+        <motion.div
+          variants={staggerContainer(0.1)}
+          {...revealOnce}
+          className="flex min-w-0 flex-col gap-0 border-t-4 border-white"
+        >
           {experiences.map((exp, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.2 }}
+              variants={fadeUp}
               className="group flex min-w-0 flex-col gap-4 border-b-4 border-white px-0 py-6 transition-colors hover:bg-white hover:text-black sm:px-4 sm:-mx-4 md:flex-row md:py-8"
             >
               <div className="w-full break-words pt-1 text-base font-bold group-hover:text-blue-600 sm:text-lg md:w-1/4">
@@ -40,7 +43,7 @@ export function Experience() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

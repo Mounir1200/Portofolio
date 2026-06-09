@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/mdabi/.claude/plugins/cache/ui-ux-pro-max-skill/ui-ux-pro-max/2.5.0/.claude/skills/ui-ux-pro-max/**)",
+      "Bash(python3 scripts/search.py \"brutalism portfolio personal developer bold\" --design-system -f markdown)",
+      "Bash(python3 scripts/search.py \"brutalism scroll-driven marquee kinetic animation\" --domain style -n 3)",
+      "Bash(python3 scripts/search.py \"animation stagger spring reduced-motion easing\" --domain ux -n 12)"
+    ]
+  }
+}

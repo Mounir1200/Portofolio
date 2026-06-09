@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { SectionHeading } from './SectionHeading';
+import { fadeUp, revealOnce, staggerContainer } from '../lib/animations';
 import projectImage from '../../imports/img3.png';
 
 const projects = [
@@ -43,20 +45,22 @@ export function Projects() {
   return (
     <section id="projets" className="py-16 md:py-20">
       <div className="flex flex-col gap-12">
-        <div className="flex min-w-0 items-end justify-between border-b-8 border-black pb-4">
-          <h2 className="break-words font-['Syne'] text-4xl font-black uppercase md:text-6xl">
-            Mes Projets
-          </h2>
+        <div className="flex min-w-0 items-end justify-between">
+          <SectionHeading>Mes Projets</SectionHeading>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          
-          <div className="relative h-[340px] md:col-span-2 md:h-[360px] xl:col-span-1">
-             <motion.div 
+        <motion.div
+          variants={staggerContainer(0.1)}
+          {...revealOnce}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+        >
+
+          <motion.div variants={fadeUp} className="relative h-[340px] md:col-span-2 md:h-[360px] xl:col-span-1">
+             <motion.div
                whileHover={{ scale: 1.02 }}
                className="w-full h-full border-4 border-black bg-white overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
              >
-               <ImageWithFallback 
+               <ImageWithFallback
                  src={projectImage}
                  alt="Regarde ce projet"
                  className="w-full h-full object-cover grayscale"
@@ -67,21 +71,18 @@ export function Projects() {
                  </div>
                </div>
              </motion.div>
-          </div>
+          </motion.div>
 
           {projects.map((proj, idx) => {
             const isDark = proj.color === 'bg-black';
             const isFlipped = Boolean(flippedProjects[idx]);
             const shadowColor = isDark ? '#0055FF' : proj.color === 'bg-blue-600' ? '#FF1100' : '#000000';
-            const faceClasses = `absolute inset-0 min-w-0 overflow-hidden p-5 border-4 border-black flex flex-col justify-between [backface-visibility:hidden] sm:p-6 ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`;
+            const faceClasses = `group absolute inset-0 min-w-0 overflow-hidden p-5 border-4 border-black flex flex-col justify-between [backface-visibility:hidden] sm:p-6 ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`;
 
             return (
               <motion.div
                 key={idx}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                variants={fadeUp}
                 className="h-[410px] sm:h-[380px] lg:h-[360px] [perspective:1200px]"
               >
                 <motion.button
@@ -99,7 +100,7 @@ export function Projects() {
                     className={faceClasses}
                     style={{ boxShadow: `8px 8px 0px 0px ${shadowColor}` }}
                   >
-                    <div className="min-w-0">
+                    <div className="relative min-w-0">
                       <span className={`inline-block px-3 py-1 font-bold text-xs border-2 mb-6 uppercase ${isDark ? 'border-white' : 'border-black'}`}>
                         {proj.type}
                       </span>
@@ -108,7 +109,7 @@ export function Projects() {
                       </h3>
                     </div>
 
-                    <div className={`mt-auto w-12 h-12 rounded-full border-4 flex items-center justify-center ${isDark ? 'border-white bg-blue-600' : 'border-black ' + proj.color}`}>
+                    <div className={`relative mt-auto w-12 h-12 rounded-full border-4 flex items-center justify-center transition-transform duration-300 group-hover:rotate-90 ${isDark ? 'border-white bg-blue-600' : 'border-black ' + proj.color}`}>
                       <span className="text-white font-black font-['Syne'] text-xl">→</span>
                     </div>
                   </div>
@@ -134,7 +135,7 @@ export function Projects() {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

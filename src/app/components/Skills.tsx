@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { SectionHeading } from './SectionHeading';
+import { fadeUp, revealOnce, staggerContainer } from '../lib/animations';
 
 const skillGroups = [
   {
@@ -43,18 +45,17 @@ const skillGroups = [
 export function Skills() {
   return (
     <section id="competences" className="overflow-hidden py-16 md:py-20">
-      <h2 className="mb-12 break-words border-b-8 border-black pb-4 font-['Syne'] text-4xl font-black uppercase md:text-6xl">
-        Compétences
-      </h2>
-      
-      <div className="grid min-w-0 grid-cols-1 gap-8 md:grid-cols-2">
+      <SectionHeading className="mb-12">Compétences</SectionHeading>
+
+      <motion.div
+        variants={staggerContainer(0.1)}
+        {...revealOnce}
+        className="grid min-w-0 grid-cols-1 gap-8 md:grid-cols-2"
+      >
         {skillGroups.map((group, idx) => (
           <motion.div
             key={idx}
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
+            variants={fadeUp}
             className={`${group.color} ${group.textColor} flex min-w-0 flex-col border-4 border-black p-5 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:p-6 md:p-8 md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]`}
           >
             <h3 className="mb-6 break-words border-b-4 border-current pb-2 font-['Syne'] text-xl font-black uppercase sm:text-2xl">
@@ -64,7 +65,8 @@ export function Skills() {
               {group.items.map((item, itemIdx) => (
                 <motion.span
                   key={itemIdx}
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.05, rotate: -2 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 15 }}
                   className={`max-w-full break-words px-3 py-2 text-sm font-bold border-2 sm:px-4 sm:text-base md:text-lg ${group.textColor === 'text-white' ? 'border-white bg-black/20' : 'border-black bg-white'} shadow-[2px_2px_0px_0px_currentColor]`}
                 >
                   {item}
@@ -73,10 +75,10 @@ export function Skills() {
             </div>
           </motion.div>
         ))}
-      </div>
-      
+      </motion.div>
+
       <div className="mt-16 flex w-full overflow-hidden bg-black py-4 border-y-4 border-black transform -rotate-2 scale-105 md:mt-20 md:scale-110">
-        <motion.div 
+        <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
           className="flex whitespace-nowrap gap-8 text-2xl md:text-3xl font-black font-['Syne'] text-white uppercase"
