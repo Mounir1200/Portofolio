@@ -39,7 +39,14 @@ export function Experience() {
               <div className="w-full min-w-0 md:w-3/4">
                 <h3 className="break-words font-['Syne'] text-xl font-black uppercase sm:text-2xl">{exp.role}</h3>
                 <h4 className="text-lg font-bold text-gray-400 group-hover:text-red-600 mb-4">{exp.company}</h4>
-                <p className="max-w-2xl whitespace-pre-line break-words font-medium">{exp.desc}</p>
+                <ul className="max-w-2xl space-y-3 break-words font-medium">
+                  {exp.desc.split('\n').filter(Boolean).map((item, itemIdx) => (
+                    <li key={itemIdx} className="flex gap-3 leading-relaxed">
+                      <span className="mt-2 h-2.5 w-2.5 flex-none rounded-full border-2 border-current bg-white group-hover:bg-red-600" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}
