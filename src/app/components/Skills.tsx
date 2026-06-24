@@ -14,19 +14,19 @@ const skillGroups = [
     category: "IA",
     color: "bg-red-600",
     textColor: "text-white",
-    items: ["Ollama", "Hugging Face", "OpenAI", "Claude AI", "Gemini", "ElevenLabs", "DeepGram", "Mistral AI"]
+    items: ["Ollama", "Hugging Face", "OpenAI", "Claude AI", "Gemini", "ElevenLabs", "Deepgram", "Mistral AI"]
   },
   {
     category: "Data",
     color: "bg-gray-200",
     textColor: "text-black",
-    items: ["SQL", "MariaDB", "NoSQL", "MongoDB", "Oracle", "SQL Server", "Neon", "Mistral AI", "Apache Hadoop", "Apache Spark", "Apache Kafka", "PowerBI"]
+    items: ["SQL", "MariaDB", "NoSQL", "MongoDB", "Oracle", "SQL Server", "Neon", "Mistral AI", "Apache Hadoop", "Apache Spark", "Apache Kafka", "Power BI"]
   },
   {
     category: "Outils",
     color: "bg-gray-200",
     textColor: "text-black",
-    items: ["Figma", "Git", "PyCharm", "VS Code", "Google Stich", "Codex", "Claude Code", "Antigravity", "Claude Design"]
+    items: ["Figma", "Git", "PyCharm", "VS Code", "Google Stitch", "Codex", "Claude Code", "Antigravity", "Claude Design"]
   },
   {
     category: "DevOps & Cloud",

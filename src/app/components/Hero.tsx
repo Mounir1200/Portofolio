@@ -44,7 +44,7 @@ export function Hero() {
             <span className="bg-black text-white px-4 inline-block transform -rotate-2">curieux.</span>
           </h1>
           <p className="mt-6 max-w-xs break-words border-l-4 border-red-600 pl-4 text-base font-bold sm:mt-8 sm:max-w-md sm:text-xl">
-            Je m'appelle Mounir, Bienvenue dans mon portfolio. J'aime partir d'une idée, la comprendre, puis lui donner forme avec soin, méthode et simplicité.
+            Je m'appelle Mounir. Bienvenue dans mon portfolio. J'aime partir d'une idée, la comprendre, puis lui donner forme avec soin, méthode et simplicité.
           </p>
         </motion.div>
       </div>

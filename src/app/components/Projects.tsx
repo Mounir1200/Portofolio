@@ -7,28 +7,28 @@ import projectImage from '../../imports/img3.png';
 
 const projects = [
   {
-    title: "Modèle de Machine Learning d'identification faciale",
-    type: "Projet Académique",
+    title: "Modèle de machine learning pour l'identification faciale",
+    type: "Projet académique",
     color: "bg-blue-600",
-    description: "Développement d'un modèle de Machine Learning permettant de distinguer les visages réels des visages modifiés via un logiciel ou une intelligence artificielle."
+    description: "Développement d'un modèle de machine learning permettant de distinguer les visages réels des visages modifiés via un logiciel ou une intelligence artificielle."
   },
   {
     title: "Projet Activ'ESAIP",
-    type: "Projet Académique",
+    type: "Projet académique",
     color: "bg-red-600",
-    description: "Réalisation d'un outil en ligne intuitif d'estimations précises et personnalisées du coût de fabrication et de service de l'entreprise TIT, spécialisée dans la pose de réseaux de chauffage urbain."
+    description: "Réalisation d'un outil en ligne intuitif permettant d'obtenir des estimations précises et personnalisées du coût de fabrication et de service de l'entreprise TIT, spécialisée dans la pose de réseaux de chauffage urbain."
   },
   {
-    title: "Projet d'Ecoconception Numérique Design4Green D4G",
-    type: "Projet Académique",
+    title: "Projet d'écoconception numérique Design4Green D4G",
+    type: "Projet académique",
     color: "bg-black",
-    description: "Réalisation d'un site web écoresponsable d'évaluation de sites web selon le RGAA (Référentiel Général d'Amélioration de l'Accessibilité)."
+    description: "Réalisation d'un site web écoresponsable d'évaluation de sites web selon le RGAA (Référentiel général d'amélioration de l'accessibilité)."
   },
   {
     title: "Développement d'une application web et mobile : ChartMind (en cours)",
-    type: "Projet Personnel",
+    type: "Projet personnel",
     color: "bg-red-600",
-    description: "Développement d'une application web et mobile d'aide à la décision pour le trading (Forex, Bourse, Crypto) qui utilise l'intelligence artificielle (Mistral AI) pour assister les traders en herbe dans leur analyse technique"
+    description: "Développement d'une application web et mobile d'aide à la décision pour le trading (Forex, Bourse, Crypto) qui utilise l'intelligence artificielle (Mistral AI) pour assister les traders en herbe dans leur analyse technique."
   }
 ];
 

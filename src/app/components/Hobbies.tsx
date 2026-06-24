@@ -3,8 +3,8 @@ import { motion } from 'motion/react';
 import { SectionHeading } from './SectionHeading';
 import { fadeUp, revealOnce, slideInLeft, slideInRight, staggerContainer } from '../lib/animations';
 
-const interests = ['Actualités Tech & IA', 'Actualités Gaming', 'Actualités Sports', 'Cuisine'];
-const leisures = ['Lecture', 'Musculation', 'Gaming', 'Programmation/développement web, mobile'];
+const interests = ['Actualités tech & IA', 'Actualités jeux vidéo', 'Actualités sportives', 'Cuisine'];
+const leisures = ['Lecture', 'Musculation', 'Gaming', 'Programmation et développement web/mobile'];
 
 export function Hobbies() {
   return (

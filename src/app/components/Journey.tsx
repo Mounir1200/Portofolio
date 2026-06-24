@@ -6,10 +6,10 @@ import { popIn, revealOnce, slideInRight, staggerContainer } from '../lib/animat
 import journeyImage from '../../imports/img2.jpg';
 
 const education = [
-  { year: "2022 - 2026", title: "Diplôme d'Ingénieur", school: "ESAIP, Angers, France", color: "bg-blue-600" },
+  { year: "2022 - 2026", title: "Diplôme d'ingénieur", school: "ESAIP, Angers, France", color: "bg-blue-600" },
   { year: "Septembre 2024 - Février 2025", title: "Programme d'échange ERASMUS", school:"RWU, Hochschule Ravensburg-Weingarten, Ravensburg, Allemagne", color: "bg-blue-600"},
   { year: "Janvier - Juin 2023", title: "Programme d'échange ERASMUS", school: "KTU, Kaunas University of Technology, Kaunas, Lituanie", color: "bg-red-600" },
-  { year: "2020 - 2022", title: "Classes Préparatoires aux Grandes Ecoles", school: "CPGE - La Salle, Ouagadougou, Burkina Faso", color: "bg-black" }
+  { year: "2020 - 2022", title: "Classes préparatoires aux grandes écoles", school: "CPGE - La Salle, Ouagadougou, Burkina Faso", color: "bg-black" }
 ];
 
 export function Journey() {
