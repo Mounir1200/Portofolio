@@ -4,7 +4,7 @@ import { SectionHeading } from './SectionHeading';
 import { fadeUp, revealOnce, staggerContainer } from '../lib/animations';
 
 const experiences = [
-  { role: "Développeur AI", company: "ESSCA Angers", duration: "Avril 2026 - Présent", desc: "Miantenance et développement d'applications internes" },
+  { role: "Développeur AI", company: "ESSCA Angers", duration: "Avril 2026 - Présent", desc: "Conception, développement et maintenance d'agents conversationnels et de systèmes RAG avancés pour la recherche d'informations en langage naturel.\nSélection, ingénierie de prompt et déploiement de modèles de pointe (OpenAI, Claude AI)\nConception d'interfaces utilisateur modernes et réactives sous React et Tailwind CSS connectées de bout en bout à des API et pipelines d'IA générative.\nIndustrialisation et mise en production sécurisée des solutions d'intelligence artificielle sur l'infrastructure Azure." },
   { role: "Projet de Fin D'étude - Développeur IA", company: "ESSCA Angers", duration: "Septembre 2025 - Février 2026", desc: "Développement, déploiement et maintenance d'applications internes" },
   { role: "Stagiaire Développeur", company: "ESSCA Angers", duration: "Avril - Juin 2025", desc: "Mise à jour et déploiement d'un chatbot\nDéveloppement et déploiement d'un annuaire RH sous IA pour la recherche d'information en langage naturel" },
   { role: "Stagiaire Data Engineer", company: "Moov Africa Burkina", duration: "Juin - Août 2024", desc:"Etude et analyse des systèmes de stockage de données à grande échelle\nIntégration des données OpenSource et simulation statique d'un data lakehouse\nIntégration des données CDR (Call Details Records) et simulation dynamique avec stockage en flux continus"},

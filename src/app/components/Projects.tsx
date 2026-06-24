@@ -28,7 +28,7 @@ const projects = [
     title: "Développement d'une application web et mobile : ChartMind (en cours)",
     type: "Projet Personnel",
     color: "bg-red-600",
-    description: "Développement d'une application web et mobile d'aide à la décision pour le trading (Forex, Bourse, Crypto) qui utilise l'intelligence artificielle pour assister les traders dans leur analyse technique"
+    description: "Développement d'une application web et mobile d'aide à la décision pour le trading (Forex, Bourse, Crypto) qui utilise l'intelligence artificielle (Mistral AI) pour assister les traders en herbe dans leur analyse technique"
   }
 ];
 
