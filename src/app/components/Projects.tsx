@@ -4,36 +4,11 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SectionHeading } from './SectionHeading';
 import { fadeUp, revealOnce, staggerContainer } from '../lib/animations';
 import projectImage from '../../imports/img3.png';
-
-const projects = [
-  {
-    title: "Modèle de machine learning pour l'identification faciale",
-    type: "Projet académique",
-    color: "bg-blue-600",
-    description: "Développement d'un modèle de machine learning permettant de distinguer les visages réels des visages modifiés via un logiciel ou une intelligence artificielle."
-  },
-  {
-    title: "Projet Activ'ESAIP",
-    type: "Projet académique",
-    color: "bg-red-600",
-    description: "Réalisation d'un outil en ligne intuitif permettant d'obtenir des estimations précises et personnalisées du coût de fabrication et de service de l'entreprise TIT, spécialisée dans la pose de réseaux de chauffage urbain."
-  },
-  {
-    title: "Projet d'écoconception numérique Design4Green D4G",
-    type: "Projet académique",
-    color: "bg-black",
-    description: "Réalisation d'un site web écoresponsable d'évaluation de sites web selon le RGAA (Référentiel général d'amélioration de l'accessibilité)."
-  },
-  {
-    title: "Développement d'une application web et mobile : ChartMind (en cours)",
-    type: "Projet personnel",
-    color: "bg-red-600",
-    description: "Développement d'une application web et mobile d'aide à la décision pour le trading (Forex, Bourse, Crypto) qui utilise l'intelligence artificielle (Mistral AI) pour assister les traders en herbe dans leur analyse technique."
-  }
-];
+import { useI18n } from '../lib/i18n';
 
 export function Projects() {
   const [flippedProjects, setFlippedProjects] = useState<Record<number, boolean>>({});
+  const { t } = useI18n();
 
   const toggleProject = (idx: number) => {
     setFlippedProjects((current) => ({
@@ -46,7 +21,7 @@ export function Projects() {
     <section id="projets" className="py-16 md:py-20">
       <div className="flex flex-col gap-12">
         <div className="flex min-w-0 items-end justify-between">
-          <SectionHeading>Mes Projets</SectionHeading>
+          <SectionHeading>{t.projects.heading}</SectionHeading>
         </div>
 
         <motion.div
@@ -62,18 +37,18 @@ export function Projects() {
              >
                <ImageWithFallback
                  src={projectImage}
-                 alt="Regarde ce projet"
+                 alt={t.projects.imageAlt}
                  className="w-full h-full object-cover grayscale"
                />
                <div className="absolute inset-0 flex items-center justify-center p-6 bg-red-600/20">
-                 <div className="max-w-full break-words bg-white px-4 py-3 text-center text-base font-black uppercase border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transform -rotate-3 sm:px-6 sm:py-4 sm:text-xl">
-                   "C'est ici que la magie opère."
+                 <div className="font-display max-w-full break-words bg-white px-4 py-3 text-center text-base font-bold uppercase border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transform -rotate-3 sm:px-6 sm:py-4 sm:text-lg">
+                   "{t.projects.featureQuote}"
                  </div>
                </div>
              </motion.div>
           </motion.div>
 
-          {projects.map((proj, idx) => {
+          {t.projects.items.map((proj, idx) => {
             const isDark = proj.color === 'bg-black';
             const isFlipped = Boolean(flippedProjects[idx]);
             const shadowColor = isDark ? '#0055FF' : proj.color === 'bg-blue-600' ? '#FF1100' : '#000000';
@@ -83,12 +58,12 @@ export function Projects() {
               <motion.div
                 key={idx}
                 variants={fadeUp}
-                className="h-[410px] sm:h-[380px] lg:h-[360px] [perspective:1200px]"
+                className="h-[430px] sm:h-[410px] lg:h-[400px] [perspective:1200px]"
               >
                 <motion.button
                   type="button"
                   aria-pressed={isFlipped}
-                  aria-label={`${isFlipped ? 'Masquer' : 'Afficher'} la description : ${proj.title}`}
+                  aria-label={`${isFlipped ? t.projects.hideDescription : t.projects.showDescription} ${t.projects.descriptionLabel} : ${proj.title}`}
                   onClick={() => toggleProject(idx)}
                   whileHover={{ x: 8, y: -8 }}
                   animate={{ rotateY: isFlipped ? 180 : 0 }}
@@ -104,13 +79,13 @@ export function Projects() {
                       <span className={`inline-block px-3 py-1 font-bold text-xs border-2 mb-6 uppercase ${isDark ? 'border-white' : 'border-black'}`}>
                         {proj.type}
                       </span>
-                      <h3 className="max-w-full break-words font-['Syne'] text-lg font-black uppercase leading-[1.05] hyphens-auto [text-wrap:balance] sm:text-xl lg:text-2xl">
+                      <h3 className="font-display max-w-full break-words text-base font-bold uppercase leading-[1.12] [text-wrap:balance] sm:text-lg lg:text-xl">
                         {proj.title}
                       </h3>
                     </div>
 
                     <div className={`relative mt-auto w-12 h-12 rounded-full border-4 flex items-center justify-center transition-transform duration-300 group-hover:rotate-90 ${isDark ? 'border-white bg-blue-600' : 'border-black ' + proj.color}`}>
-                      <span className="text-white font-black font-['Syne'] text-xl">→</span>
+                      <span className="font-display text-xl font-bold text-white">→</span>
                     </div>
                   </div>
 
@@ -119,16 +94,16 @@ export function Projects() {
                     style={{ boxShadow: `8px 8px 0px 0px ${shadowColor}` }}
                   >
                     <div className="min-w-0">
-                      <h3 className="mb-5 max-w-full break-words font-['Syne'] text-base font-black uppercase leading-[1.05] hyphens-auto sm:text-lg lg:text-xl">
+                      <h3 className="font-display mb-4 max-w-full break-words text-sm font-bold uppercase leading-[1.15] sm:text-base lg:text-lg">
                         {proj.title}
                       </h3>
-                      <p className={`text-sm md:text-base font-bold leading-relaxed break-words ${isDark ? 'text-white/85' : 'text-black/75'}`}>
+                      <p className={`break-words text-sm font-semibold leading-[1.55] ${isDark ? 'text-white/85' : 'text-black/75'}`}>
                         {proj.description}
                       </p>
                     </div>
 
                     <div className={`mt-6 w-12 h-12 rounded-full border-4 flex items-center justify-center ${isDark ? 'border-white bg-blue-600' : 'border-black ' + proj.color}`}>
-                      <span className="text-white font-black font-['Syne'] text-xl">←</span>
+                      <span className="font-display text-xl font-bold text-white">←</span>
                     </div>
                   </div>
                 </motion.button>

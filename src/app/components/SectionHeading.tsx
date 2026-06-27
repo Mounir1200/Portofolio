@@ -11,7 +11,7 @@ interface SectionHeadingProps {
 }
 
 /**
- * Titre de section uniformisé (DRY) : même typographie Syne, même comportement
+ * Titre de section uniformisé (DRY) : même typographie d'affichage, même comportement
  * de révélation au scroll. Le soulignement se déploie de gauche à droite.
  */
 export function SectionHeading({
@@ -23,7 +23,7 @@ export function SectionHeading({
     <motion.h2
       variants={fadeUp}
       {...revealOnce}
-      className={`relative break-words font-['Syne'] text-4xl font-black uppercase md:text-6xl ${className}`}
+      className={`font-display relative break-words text-3xl font-bold uppercase leading-tight sm:text-4xl md:text-5xl ${className}`}
     >
       {children}
       {withUnderline && (

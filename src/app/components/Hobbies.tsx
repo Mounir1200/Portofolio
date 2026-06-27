@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { SectionHeading } from './SectionHeading';
-import { fadeUp, revealOnce, slideInLeft, slideInRight, staggerContainer } from '../lib/animations';
-
-const interests = ['Actualités tech & IA', 'Actualités jeux vidéo', 'Actualités sportives', 'Cuisine'];
-const leisures = ['Lecture', 'Musculation', 'Gaming', 'Programmation et développement web/mobile'];
+import { revealOnce, slideInLeft, slideInRight } from '../lib/animations';
+import { useI18n } from '../lib/i18n';
 
 export function Hobbies() {
+  const { t } = useI18n();
+
   return (
     <section id="hobbies" className="py-16 md:py-20">
-      <SectionHeading className="mb-12">Hobbies</SectionHeading>
+      <SectionHeading className="mb-12">{t.hobbies.heading}</SectionHeading>
 
       <div className="grid min-w-0 grid-cols-1 gap-8 md:grid-cols-2">
         {/* Centres d'intérêt */}
@@ -20,23 +20,18 @@ export function Hobbies() {
         >
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-red-600 rounded-full border-8 border-black opacity-90" />
 
-          <h3 className="relative z-10 mb-8 break-words font-['Syne'] text-2xl font-black uppercase sm:text-3xl">Centres d'intérêt</h3>
+          <h3 className="font-display relative z-10 mb-8 break-words text-xl font-bold uppercase sm:text-2xl">{t.hobbies.interestsHeading}</h3>
 
-          <motion.ul
-            variants={staggerContainer(0.08)}
-            {...revealOnce}
-            className="relative z-10 flex min-w-0 flex-col gap-6 text-base font-bold sm:text-lg"
-          >
-            {interests.map((interest) => (
-              <motion.li
-                key={interest}
-                variants={fadeUp}
+          <ul className="relative z-10 flex min-w-0 flex-col gap-6 text-base font-bold sm:text-lg">
+            {t.hobbies.interests.map((interest, idx) => (
+              <li
+                key={idx}
                 className="break-words border-l-4 border-white pl-4 transition-all hover:pl-6 cursor-default"
               >
                 {interest}
-              </motion.li>
+              </li>
             ))}
-          </motion.ul>
+          </ul>
         </motion.div>
 
         {/* Loisirs */}
@@ -47,23 +42,18 @@ export function Hobbies() {
         >
           <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-black border-8 border-white transform rotate-45 opacity-10" />
 
-          <h3 className="relative z-10 mb-8 break-words font-['Syne'] text-2xl font-black uppercase sm:text-3xl">Loisirs</h3>
+          <h3 className="font-display relative z-10 mb-8 break-words text-xl font-bold uppercase sm:text-2xl">{t.hobbies.leisuresHeading}</h3>
 
-          <motion.ul
-            variants={staggerContainer(0.08)}
-            {...revealOnce}
-            className="relative z-10 flex min-w-0 flex-col gap-6 text-base font-bold sm:text-lg"
-          >
-            {leisures.map((leisure) => (
-              <motion.li
-                key={leisure}
-                variants={fadeUp}
+          <ul className="relative z-10 flex min-w-0 flex-col gap-6 text-base font-bold sm:text-lg">
+            {t.hobbies.leisures.map((leisure, idx) => (
+              <li
+                key={idx}
                 className="break-words border-l-4 border-black pl-4 transition-all hover:pl-6 cursor-default"
               >
                 {leisure}
-              </motion.li>
+              </li>
             ))}
-          </motion.ul>
+          </ul>
         </motion.div>
       </div>
     </section>

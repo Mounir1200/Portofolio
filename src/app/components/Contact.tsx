@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 import { fadeUp, revealOnce, staggerContainer } from '../lib/animations';
+import { useI18n } from '../lib/i18n';
 
 export function Contact() {
   const email = 'mounirdabire47@gmail.com';
   const [emailCopied, setEmailCopied] = useState(false);
+  const { t } = useI18n();
 
   const confirmEmailCopied = () => {
     setEmailCopied(true);
@@ -48,30 +50,30 @@ export function Contact() {
 
         <motion.h2
           variants={fadeUp}
-          className="mb-12 break-words font-['Syne'] text-4xl font-black uppercase text-white drop-shadow-[4px_4px_0px_rgba(0,0,0,1)] sm:text-5xl md:text-7xl md:drop-shadow-[6px_6px_0px_rgba(0,0,0,1)]"
+          className="font-display mb-12 break-words text-3xl font-bold uppercase leading-tight text-white drop-shadow-[4px_4px_0px_rgba(0,0,0,1)] sm:text-4xl md:text-6xl md:drop-shadow-[6px_6px_0px_rgba(0,0,0,1)]"
         >
-          Parlons-en.
+          {t.contact.heading}
         </motion.h2>
 
         <div className="mb-16 flex w-full flex-col items-center gap-6 md:mb-20 md:flex-row md:justify-center md:gap-8">
-          <motion.a variants={fadeUp} href={`mailto:${email}`} onClick={handleEmailClick} className="group flex w-full max-w-xs items-center justify-center gap-4 bg-white px-6 py-4 text-lg font-bold uppercase border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(255,17,0,1)] sm:text-xl md:w-auto md:px-8">
+          <motion.a variants={fadeUp} href={`mailto:${email}`} onClick={handleEmailClick} className="group flex w-full max-w-xs items-center justify-center gap-4 bg-white px-6 py-4 text-base font-bold uppercase border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(255,17,0,1)] sm:text-lg md:w-auto md:px-8">
             <Mail className="w-8 h-8 group-hover:text-red-600" />
-            <span>{emailCopied ? 'Email copié' : 'Email'}</span>
+            <span>{emailCopied ? t.contact.emailCopied : 'Email'}</span>
           </motion.a>
 
-          <motion.a variants={fadeUp} href="https://www.linkedin.com/in/mounir-dabire" className="group flex w-full max-w-xs items-center justify-center gap-4 bg-white px-6 py-4 text-lg font-bold uppercase border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(255,17,0,1)] sm:text-xl md:w-auto md:px-8">
+          <motion.a variants={fadeUp} href="https://www.linkedin.com/in/mounir-dabire" className="group flex w-full max-w-xs items-center justify-center gap-4 bg-white px-6 py-4 text-base font-bold uppercase border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(255,17,0,1)] sm:text-lg md:w-auto md:px-8">
             <Linkedin className="w-8 h-8 group-hover:text-blue-600" />
             <span>LinkedIn</span>
           </motion.a>
 
-          <motion.a variants={fadeUp} href="https://github.com/Mounir1200" className="group flex w-full max-w-xs items-center justify-center gap-4 bg-white px-6 py-4 text-lg font-bold uppercase border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(255,17,0,1)] sm:text-xl md:w-auto md:px-8">
+          <motion.a variants={fadeUp} href="https://github.com/Mounir1200" className="group flex w-full max-w-xs items-center justify-center gap-4 bg-white px-6 py-4 text-base font-bold uppercase border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(255,17,0,1)] sm:text-lg md:w-auto md:px-8">
             <Github className="w-8 h-8 group-hover:text-black" />
             <span>GitHub</span>
           </motion.a>
         </div>
 
         <p className="w-full break-words border-t-4 border-black pt-8 text-base font-bold text-white sm:text-lg">
-          © {new Date().getFullYear()} — Portfolio de Mounir DABIRE.
+          © {new Date().getFullYear()} — {t.contact.copyright}
         </p>
       </motion.div>
       
